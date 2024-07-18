@@ -1,0 +1,7 @@
+This repository contains FORTRAN Codes for the implementatin of Sod's 1D shock-tube problem modelled using the Euler Equation.
+
+The results are also generated with plots.
+
+MUSCL schemes are used to obtain 2nd-order TVD behaviour especially in the vicinity of sharp gradients and various Godunov-type methods are implemented such as the HLL and HLLC solvers including the solver of Roe. 
+
+In 1D, the minmod slope limiter is used to guarantee TVD beahviour.

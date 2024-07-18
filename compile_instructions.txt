@@ -1,0 +1,42 @@
+instructions
+
+compile options
+
+run the following command for using intel compiler
+
+module load intel
+
+compile options for debug of 1D code
+ifort -i4 -r8 -O0 -g -debug all -traceback  -check bounds -fp-model source -debug inline-debug-info -zero -assume nounderscore euler.f90
+
+
+
+ifort -i4 -r8 -O0 -g -debug all -traceback  -check bounds -fp-model source -debug inline-debug-info -zero -assume nounderscore euler2.f90
+
+
+ifort -i4 -r8 -O0 -g -debug all -traceback  -check bounds -fp-model source -debug inline-debug-info -zero -assume nounderscore euler3.f90
+
+
+compile options for production runs of 1D code
+ifort -i4 -r8 -O2 -fp-model precise -zero  euler.f90 -o QA
+
+
+
+For gfortran compile with the following option:
+
+gfortran -ffree-line-length-none -fimplicit-none -fdefault-real-8 -Wall  -fbounds-check -finit-local-zero  -fdump parse-tree -fdump-core -fbacktrace -fdefault-double-8 -fbackslash  -O1 -fcray-pointer -Wno-lto-type-mismatch euler.f90
+
+
+compile options  for debug of 2D code
+
+ifort -i4 -r8 -O0 -g -debug all -traceback  -check bounds -fp-model source -debug inline-debug-info -zero -assume nounderscore  basis.f90 qr.f90 defi.f90 mesher.f90 solver.f90 driver.f90
+
+compile options for production runs of 2D code
+
+ifort -i4 -r8 -O2 -fp-model precise -zero basis.f90 qr.f90 defi.f90 mesher.f90 solver.f90 driver.f90
+
+For running the code you go to the run directory
+You copy the compiled executable a.out
+you run the command ./a.out in terminal OR ./QA.out
+
+
